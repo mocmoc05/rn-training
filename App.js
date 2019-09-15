@@ -65,15 +65,24 @@ class App extends React.Component{
   }
 
   showName(name){
-    alert(name);
+    // alert(name);
+    this.props.navigation.navigate('Detail', {name, age: 18, gender: 0})
   }
 
   render() {
-    const arr = [1,2,3,4];
+    console.log('props in App: ',this.props);
+    const arr = ['Hoan','Son','Dinh','An'];
     return (
       <View style={{ flex: 1 }}>
         <StatusBar barStyle="dark-content" />
         <SafeAreaView style={{ flex: 1 }}>
+          <View style={{flexDirection: 'row'}}>
+            {arr.map((e,i) => (
+              <View key={i}>
+                <Text style={{ backgroundColor: '#DDD', borderRadius: 8, padding: 8, margin: 8 }} key={i}>{e}</Text>
+              </View>
+            ))}
+          </View>
           <View style={{backgroundColor: Colors.lighter, flex: 1}}>
             <Home 
               devices={this.state.devices}
