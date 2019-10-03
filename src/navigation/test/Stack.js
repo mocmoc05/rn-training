@@ -2,8 +2,9 @@ import { createAppContainer } from 'react-navigation'; // import navigation cont
 
 import { createStackNavigator } from 'react-navigation-stack'; //import create stack
 
-import App from '../../App';
-import Detail from '../views/Detail';
+import App from '../../../App';
+import Detail from '../../views/screens/Detail';
+import Home from '../../../Home';
 
 // declare screens that need to navigate
 const StackHome = createStackNavigator({
