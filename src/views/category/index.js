@@ -6,6 +6,7 @@ import LinearGradient from 'react-native-linear-gradient';
 export default class Category extends Component {
     state = {  }
     render() {
+        console.log(this.props)
         return (
             <SafeAreaView style={{flex: 1}}>
                 <View style={[style.container, {flex: null}]}>

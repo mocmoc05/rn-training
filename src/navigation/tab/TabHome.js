@@ -10,7 +10,7 @@ import homeStack from '../stack/homeStack';
 import Category from '../../views/category';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 
-const TabHome = createBottomTabNavigator({
+const TabHome = createAppContainer(createBottomTabNavigator({
     Newsfeed: {
         screen: homeStack,
         navigationOptions: {
@@ -48,10 +48,18 @@ const TabHome = createBottomTabNavigator({
         }
     },
 }, {
-        tabBarOptions: {
-            activeTintColor: 'tomato',
-            inactiveTintColor: 'gray',
-        },
-})
+    tabBarOptions: {
+        activeTintColor: 'tomato',
+        inactiveTintColor: 'gray',
+    }
+}))
 
-export default createAppContainer(TabHome)
+export default class Home extends React.Component{
+    constructor(){
+        super();
+        this.socket = 'hello'
+    }
+    render() {
+        return <TabHome screenProps={this.socket} />
+    }
+}

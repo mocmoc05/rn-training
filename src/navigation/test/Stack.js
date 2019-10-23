@@ -8,7 +8,7 @@ import Home from '../../../Home';
 
 // declare screens that need to navigate
 const StackHome = createStackNavigator({
-    Home: {screen: App},
+    Home: {screen: Home},
     Detail: {
         screen: Detail,
         navigationOptions: {
